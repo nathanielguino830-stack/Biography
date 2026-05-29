@@ -128,6 +128,13 @@ main {
     margin-bottom: 10px;
 }
 
+/* Gold Text Style */
+.gold-text {
+    color: #FFD700 !important;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 /* Skills Grid */
 .skills-grid {
     display: grid;
