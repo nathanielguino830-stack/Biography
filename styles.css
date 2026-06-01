@@ -65,7 +65,9 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -85,9 +87,10 @@ body {
 .navbar a {
     display: block;
     color: white;
-    padding: 15px 20px;
+    padding: 10px 13.33px;
     text-decoration: none;
     transition: background-color 0.3s;
+    font-size: 0.933em;
 }
 
 .navbar a:hover {
@@ -234,15 +237,17 @@ main {
     }
 
     .profile-section {
-    background-image: url('FaceBackground.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;}
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #000000 0%, #ff0000 100%);
+    }
 
     .navbar {
         position: sticky;
         top: auto;
         flex-shrink: 0;
+        background-color: rgba(51, 51, 51, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
     .navbar a:hover {
@@ -359,6 +364,12 @@ main {
         height: 120px;
     }
 
+    .navbar {
+        background-color: rgba(51, 51, 51, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
     .navbar ul {
         flex-direction: column;
     }
@@ -369,8 +380,8 @@ main {
 
     .navbar a {
         text-align: center;
-        padding: 12px 15px;
-        font-size: 0.9em;
+        padding: 8px 10px;
+        font-size: 0.6em;
     }
 
     main {
