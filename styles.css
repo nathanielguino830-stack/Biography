@@ -248,7 +248,7 @@ main {
         top: auto;
         flex-shrink: 0;
         background-image: url('FaceBackground.jpg');
-        backdrop-filter: blur(10px);
+        background-image: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
 
@@ -373,7 +373,7 @@ main {
 
     .navbar {
         background-image: url('FaceBackground.jpg');
-        backdrop-filter: blur(10px);
+        background-image: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
 
