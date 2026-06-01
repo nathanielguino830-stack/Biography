@@ -14,15 +14,12 @@ body {
     background-position: center;
     min-height: 100vh;
     padding: 20px 0;
-    overflow-x: hidden;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    max-width: 100vw;
     background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
@@ -36,8 +33,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    flex-shrink: 0;
-    min-height: auto;
 }
 
 .profile-pic {
@@ -72,9 +67,8 @@ body {
 .navbar {
     background-color: #333;
     position: sticky;
-    top: auto;
+    top: 0;
     z-index: 100;
-    flex-shrink: 0;
 }
 
 .navbar ul {
@@ -100,32 +94,22 @@ body {
     background-color: #667eea;
 }
 
-/* Main Content - Horizontal Scroll */
+.navbar a.active {
+    background-color: #667eea;
+    font-weight: bold;
+}
+
+/* Main Content */
 main {
-    display: flex;
-    flex: 1;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     padding: 0;
-    width: 100%;
 }
 
 .section {
-    flex: 0 0 100vw;
     padding: 40px;
-    border-bottom: none;
-    border-right: 1px solid #eee;
-    overflow-y: auto;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-bottom: 1px solid #eee;
 }
 
 .section:last-of-type {
-    border-right: none;
     border-bottom: none;
 }
 
@@ -179,7 +163,7 @@ main {
 }
 
 .skill-card {
-    background: linear-gradient(135deg, #000000 0%, #d60000 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 20px;
     border-radius: 8px;
@@ -231,14 +215,93 @@ main {
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: none;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* ============= DESKTOP LAYOUT (Horizontal Scroll) ============= */
+@media (min-width: 1025px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .profile-section {
+        flex-shrink: 0;
+    }
+
+    .navbar {
+        position: sticky;
+        top: auto;
+        flex-shrink: 0;
+    }
+
+    main {
+        display: flex;
+        flex: 1;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 0;
+        width: 100%;
+    }
+
+    main::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    main::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    main::-webkit-scrollbar-thumb {
+        background: #667eea;
+        border-radius: 4px;
+    }
+
+    main::-webkit-scrollbar-thumb:hover {
+        background: #764ba2;
+    }
+
+    .section {
+        flex: 0 0 100vw;
+        padding: 40px;
+        border-bottom: none;
+        border-right: 1px solid #eee;
+        overflow-y: auto;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .section:last-of-type {
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .footer {
+        display: none;
+    }
+}
+
+/* ============= MOBILE/TABLET LAYOUT (Vertical Scroll) ============= */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
     .profile-section h1 {
         font-size: 2em;
     }
@@ -249,11 +312,11 @@ main {
     }
 
     .navbar ul {
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .navbar li {
-        width: auto;
+        width: 100%;
     }
 
     .navbar a {
@@ -262,9 +325,19 @@ main {
         font-size: 0.9em;
     }
 
+    main {
+        padding: 0;
+        overflow-x: auto;
+    }
+
     .section {
-        flex: 0 0 100vw;
         padding: 25px;
+        border-bottom: 1px solid #eee;
+        border-right: none;
+    }
+
+    .section:last-of-type {
+        border-bottom: none;
     }
 
     .section h2 {
@@ -273,5 +346,9 @@ main {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer {
+        display: block;
     }
 }
