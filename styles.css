@@ -247,7 +247,7 @@ main {
         position: sticky;
         top: auto;
         flex-shrink: 0;
-        background-color: none;
+        background-image: url('FaceBackground.jpg');
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
@@ -372,7 +372,7 @@ main {
     }
 
     .navbar {
-        background-color: none;
+        background-image: url('FaceBackground.jpg');
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
     }
